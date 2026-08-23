@@ -1,0 +1,24 @@
+---
+description: Never use em dashes in copy, prompts, or comments
+alwaysApply: true
+---
+
+# No em dashes
+
+Never write an em dash (`—`) or the HTML entity `&mdash;`. This is a hard ban in user-facing copy, system prompts, ticket text, comments, and commit messages.
+
+Do not use an en dash (`–`) as a substitute for a pause. En dashes are only for numeric ranges that already exist in source (`3–5`). Prefer `3-5` in new copy.
+
+Replace a pause with a period, a comma, or a colon.
+
+```
+# BAD
+Hi Liam — I have your account.
+Stay here — their reply will land here.
+
+# GOOD
+Hi Liam. I have your account.
+Stay here. Their reply will land here.
+```
+
+If you find an existing em dash while editing a file, remove it in the same change.

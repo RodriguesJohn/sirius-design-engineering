@@ -1,0 +1,42 @@
+/* Sirius brand primitives from Sirius_BrandGuidelinesPoster_24x36inches.pdf.
+   Restraint: beige field, graphite ink, one wine action, ice for human. */
+
+:root {
+  --sirius-beige: #F1EEE9;
+  --sirius-white: #FFFFFF;
+  --sirius-graphite: #303030;
+  --sirius-grey: #616161;
+  --sirius-ice: #C1E9EC;
+  --sirius-wine: #79182C;
+
+  --sx-bg: var(--sirius-beige);
+  --sx-surface: var(--sirius-white);
+  --sx-ink: var(--sirius-graphite);
+  --sx-ink-muted: var(--sirius-grey);
+  --sx-inverse: var(--sirius-graphite);
+  --sx-on-inverse: var(--sirius-white);
+  --sx-on-inverse-muted: color-mix(in srgb, var(--sirius-white) 68%, transparent);
+  --sx-on-inverse-soft: color-mix(in srgb, var(--sirius-white) 12%, transparent);
+  --sx-on-inverse-faint: color-mix(in srgb, var(--sirius-white) 6%, transparent);
+  --sx-action: var(--sirius-wine);
+  --sx-action-hover: color-mix(in srgb, var(--sirius-wine) 78%, var(--sirius-graphite));
+  --sx-human: var(--sirius-ice);
+  --sx-focus: var(--sirius-ice);
+  --sx-line: color-mix(in srgb, var(--sirius-graphite) 12%, transparent);
+  --sx-field: color-mix(in srgb, var(--sirius-graphite) 6%, transparent);
+  --sx-placeholder: color-mix(in srgb, var(--sirius-graphite) 42%, transparent);
+  --sx-photo-edge: color-mix(in srgb, var(--sirius-graphite) 10%, transparent);
+  --sx-shadow: color-mix(in srgb, var(--sirius-graphite) 22%, transparent);
+  --sx-shadow-strong: color-mix(in srgb, var(--sirius-graphite) 28%, transparent);
+
+  --sx-beige: var(--sirius-beige);
+  --sx-white: var(--sirius-white);
+  --sx-graphite: var(--sirius-graphite);
+  --sx-grey: var(--sirius-grey);
+  --sx-ice: var(--sirius-ice);
+  --sx-wine: var(--sirius-wine);
+  --sx-wine-deep: var(--sx-action-hover);
+
+  --sx-ease: cubic-bezier(0.2, 0, 0, 1);
+  --sx-sans: Aeonik, Satoshi, sans-serif;
+}
