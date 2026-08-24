@@ -1,15 +1,15 @@
-# Sirius × Ritual Goods — The Widget Swap
+# Sirius × Ritual Goods. The Widget Swap
 
 Design engineering challenge: keep Deskly, replace the store widget.
 
 Sirius sits on the Ritual Goods storefront, answers from the real help center, knows the logged-in customer, and only files a Deskly ticket when a human is needed. The agent’s reply comes back in the same chat.
 
 ```
-store/          Ritual Goods storefront — do not rebuild
+store/          Ritual Goods storefront. Do not rebuild
 widget/         Sirius widget (the work)
-  src/          React app — chrome, brain, Deskly client
+  src/          React app: chrome, brain, Deskly client
   styles/       Brand tokens + chrome
-  widget.js     Built bundle (vite) — what the store loads
+  widget.js     Built bundle (vite). What the store loads
 helpdesk/       Deskly (inbox + API)
 data/           Customers, orders, historical chats
 brand/          Sirius brand guidelines
@@ -50,4 +50,4 @@ OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-`.env` is gitignored. Deskly reads it and proxies OpenAI — the key never ships in the widget. Without a key, Sirius falls back to the local help-center brain.
+`.env` is gitignored. Deskly reads it and proxies OpenAI. The key never ships in the widget. Without a key, Sirius falls back to the local help-center brain.
