@@ -5,7 +5,7 @@ export default function Bubble({ open, waiting, onToggle }) {
       type="button"
       aria-expanded={open}
       aria-controls="rg-panel"
-      aria-label={open ? "Close Sirius AI" : "Open Sirius AI"}
+      aria-label={open ? "Close Sirius" : "Open Sirius"}
       data-waiting={waiting ? "true" : undefined}
       onClick={onToggle}
     >
