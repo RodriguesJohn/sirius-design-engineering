@@ -7,6 +7,7 @@ export const BRAND = {
   grey: "#616161",
   ice: "#C1E9EC",
   wine: "#79182C",
+  clay: "#B86B67",
 };
 
 export function hexRgb(hex) {

@@ -56,6 +56,22 @@ export function situation(customer) {
   };
 }
 
+export function starterPrompts(customer) {
+  const picks = [];
+  if (unfinishedCancel(customer)) {
+    picks.push({ id: "cancel", label: "Please cancel my subscription" });
+  } else if (openShipping(customer)) {
+    picks.push({ id: "order", label: "Where is my order?" });
+  } else if (situation(customer).quiet) {
+    picks.push({ id: "skip", label: "Skip my next shipment" });
+  } else {
+    picks.push({ id: "order", label: "Where is my order?" });
+  }
+  picks.push({ id: "returns", label: "What's the return policy?" });
+  picks.push({ id: "human", label: "Talk to a person" });
+  return picks.slice(0, 3);
+}
+
 export function connectPrompt(customer, intent, reason) {
   if (intent === "human") {
     return "I’ll bring a person in with your account already attached. Stay here. Their reply will land in this chat.";

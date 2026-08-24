@@ -8,6 +8,7 @@
   --sirius-grey: #616161;
   --sirius-ice: #C1E9EC;
   --sirius-wine: #79182C;
+  --sirius-clay: #B86B67;
 
   --sx-bg: var(--sirius-beige);
   --sx-surface: var(--sirius-white);
@@ -28,6 +29,8 @@
   --sx-photo-edge: color-mix(in srgb, var(--sirius-graphite) 10%, transparent);
   --sx-shadow: color-mix(in srgb, var(--sirius-graphite) 22%, transparent);
   --sx-shadow-strong: color-mix(in srgb, var(--sirius-graphite) 28%, transparent);
+  --sx-mark: var(--sirius-clay);
+  --sx-orb-ring: color-mix(in srgb, var(--sirius-white) 48%, var(--sirius-ice));
 
   --sx-beige: var(--sirius-beige);
   --sx-white: var(--sirius-white);

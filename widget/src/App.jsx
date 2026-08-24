@@ -4,7 +4,7 @@ import Composer from "./components/Composer.jsx";
 import Header from "./components/Header.jsx";
 import Messages from "./components/Messages.jsx";
 import { ANGER, answerPolicy, bestArticle, classify, greeting, shouldEscalate, ticketPayload } from "./lib/brain.js";
-import { connectPrompt, mustActNow, situation, spokenContext } from "./lib/conversation.js";
+import { connectPrompt, mustActNow, situation, spokenContext, starterPrompts } from "./lib/conversation.js";
 import { compactCustomer, fullName } from "./lib/customer.js";
 import { askSirius, fetchComments, loadArticles, postComment, postTicket, solveTicket } from "./lib/deskly.js";
 import { loadStats, saveStats } from "./lib/stats.js";
@@ -292,12 +292,16 @@ export default function App({ articlesUrl }) {
     }
   }
 
-  async function handleSend() {
-    const q = draft.trim();
+  async function sendQuery(raw) {
+    const q = String(raw || "").trim();
     if (!q) return;
     setDraft("");
     add("user", q);
     await replyTo(q);
+  }
+
+  async function handleSend() {
+    await sendQuery(draft);
   }
 
   async function handleAttach(file) {
@@ -373,9 +377,17 @@ export default function App({ articlesUrl }) {
     <div id="rg-root">
       <Bubble open={open} waiting={waiting} onToggle={() => setPanelOpen(!open)} />
       <div id="rg-panel" className={open ? "open" : undefined} role="dialog" aria-labelledby="rg-brand" aria-modal="false">
-        <Header live={open} onClose={() => setPanelOpen(false)} />
+        <Header onClose={() => setPanelOpen(false)} />
         <Messages items={messages} typing={typing} onAction={handleAction} />
-        <Composer draft={draft} setDraft={setDraft} onSend={handleSend} onAttach={handleAttach} inputRef={inputRef} />
+        <Composer
+          draft={draft}
+          setDraft={setDraft}
+          onSend={handleSend}
+          onAttach={handleAttach}
+          onPrompt={sendQuery}
+          prompts={!waiting && !messages.some((m) => m.role === "user") ? starterPrompts(customer) : []}
+          inputRef={inputRef}
+        />
       </div>
     </div>
   );

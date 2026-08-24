@@ -1,11 +1,8 @@
-import BrandShader from "./BrandShader.jsx";
-
-export default function Header({ onClose, live }) {
+export default function Header({ onClose }) {
   return (
     <div id="rg-head">
-      <BrandShader live={live} mode="banner" />
       <div id="rg-mark">
-        <div id="rg-brand">Sirius</div>
+        <div id="rg-brand">Sirius AI</div>
       </div>
       <div id="rg-tools">
         <button type="button" id="rg-close" aria-label="Close chat" onClick={onClose}>

@@ -63,7 +63,7 @@ export default function Messages({ items, typing, onAction }) {
                 variants={fadeUp}
                 transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
               >
-                Sirius
+                Sirius AI
               </motion.div>
             )}
             <motion.div
@@ -120,7 +120,7 @@ export default function Messages({ items, typing, onAction }) {
       })}
       {typing && (
         <div className="rg-row bot" id="rg-typing">
-          <div className="rg-label">Sirius</div>
+          <div className="rg-label">Sirius AI</div>
           <div className="rg-b rg-thinking">
             <ThinkingAnimation label="Thinking" size="sm" />
           </div>
