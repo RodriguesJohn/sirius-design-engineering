@@ -40,14 +40,3 @@ Then open:
 - Agent inbox → [http://localhost:8099](http://localhost:8099)
 
 Pick a customer in the store dropdown. Chat in Sirius. Replies typed in Deskly land back in the widget.
-
-## Live LLM (optional)
-
-Copy `.env.example` to `.env` and paste your OpenAI key:
-
-```
-OPENAI_API_KEY=sk-...
-OPENAI_MODEL=gpt-4o-mini
-```
-
-`.env` is gitignored. Deskly reads it and proxies OpenAI. The key never ships in the widget. Without a key, Sirius falls back to the local help-center brain.
